@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 
 const getPostMetadata = () => {
-  const folder = path.join(__dirname, "md");
+  const folder = "./content/opdrachten";
   const files = fs.readdirSync(folder);
   const markdownFiles = files.filter((fn) => fn.endsWith(".md"));
   const slugs = files.map((fn) => fn.replace(".md", ""));
@@ -14,7 +14,7 @@ const MdToHtml = () => {
   const metaData = getPostMetadata();
   const postReviews = metaData.map((slug) => (
     <div>
-      <Link href="/vakken/[template]" as={`/vakken/${slug}`}>
+      <Link href="/vakken/[slug]" as={`/vakken/${slug}`}>
         <h1>{slug}</h1>
       </Link>
     </div>
