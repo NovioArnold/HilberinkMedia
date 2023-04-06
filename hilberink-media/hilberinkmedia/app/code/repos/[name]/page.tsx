@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Repo from "@/app/components/Repo";
 import RepoDirs from "@/app/components/RepoDirs";
-// eslint-disable-next-line no-use-before-define
+
 const RepoPage = ({ params: { name } }) => {
   return (
     <div className="card">
