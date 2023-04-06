@@ -166,6 +166,7 @@ a {
   border: white solid 1px;
   border-radius: 8%;
   padding: 3rem;
+  margin: 10px;
 }
 .card-title {
   font-size: 2rem;

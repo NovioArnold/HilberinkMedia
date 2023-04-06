@@ -1,4 +1,4 @@
-const Slug = (props: any) => {
+const ContentPage = (props: any) => {
   const slug = props.params.slug;
   return (
     <div>
@@ -9,4 +9,4 @@ const Slug = (props: any) => {
   );
 };
 
-export default Slug;
+export default ContentPage;

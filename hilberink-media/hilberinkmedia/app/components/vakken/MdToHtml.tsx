@@ -12,10 +12,10 @@ const getPostMetadata = () => {
 
 const MdToHtml = () => {
   const metaData = getPostMetadata();
-  const postReviews = metaData.map((slug) => (
-    <div>
+  const postReviews = metaData.map((slug, markdownFiles) => (
+    <div className="card">
       <Link href="/vakken/[slug]" as={`/vakken/${slug}`}>
-        <h1>{slug}</h1>
+        <h1 className="card-title">{slug}</h1>
       </Link>
     </div>
   ));
