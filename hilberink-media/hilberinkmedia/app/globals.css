@@ -132,7 +132,6 @@ a {
   align-items: center;
   padding: 10px;
   margin: 10px;
-  border: white solid 1px;
 }
 
 .repo-details {
@@ -154,6 +153,7 @@ a {
   align-items: center;
   border: white solid 1px;
   border-radius: 10%;
+  box-shadow: gray 6px 6px;
 }
 
 .card {
@@ -164,8 +164,13 @@ a {
   justify-content: space-between;
   align-items: center;
   border: white solid 1px;
-  border-radius: 10%;
+  border-radius: 8%;
   padding: 3rem;
+}
+.card-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
 }
 
 li {

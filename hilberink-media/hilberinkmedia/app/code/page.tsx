@@ -1,6 +1,10 @@
 import ReposPage from "@/app/components/Repo";
 const CodePage = () => {
-  return <ReposPage />;
+  return (
+    <div className="card">
+      <ReposPage />
+    </div>
+  );
 };
 
 export default CodePage;
