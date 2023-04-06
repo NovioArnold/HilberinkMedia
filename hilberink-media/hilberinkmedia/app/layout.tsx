@@ -3,7 +3,7 @@ import Header from "@/app/components/header";
 
 export const metadata = {
   title: "Hilberink Media",
-  description: "Hilberink Media is a web development company",
+  description: "Hilberink Media the 42 WAY",
   keywords:
     "html, css, javascript, typescript, react, nextjs, nodejs, express, python",
 };
