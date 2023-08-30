@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class Rollingstock():
     railroad_company: str
@@ -32,9 +33,10 @@ class Engine(Rollingstock):
 @dataclass
 class Car(Rollingstock):
     type: str
-    is_loaded: bool
-    load: tuple
-    destination: object
+    is_loaded: bool = False
+    cargo_name: str = 'Empty'
+    cargo_quantity: int = 0
+    destination: str = 'None'
 
 
     def __str__(self):
@@ -42,7 +44,8 @@ class Car(Rollingstock):
                 f'Road number: {self.road_number_prefix}{self.road_number}\n'
                 f'Type of car: {self.type}\n'
                 f'Is loaded: {self.is_loaded}\n'
-                f'load: {self.load}\n'
+                f'cargo: {self.cargo_name}\n'
+                f'quantity: {self.cargo_quantity}\n'
                 f'Location: {self.location}\n'
                 f'destination : {self.destination}\n'
                 f'Assigned to consist: {self.is_assigned_to_consist}\n'

@@ -1,1 +1,0 @@
-{'railroad_company': 'Canadian National', 'road_number_prefix': 'CN', 'road_number': 420, 'is_assigned_to_consist': False, 'location': 'lumbermill', 'type': 'geared steam engine', 'name': 'climax', 'fuel_type': 'wood', 'wheel_configuration': '4-4', 'is_assigned_to_crew': True, 'has_tender': False, 'last_time_serviced': '10-10-2020'}
