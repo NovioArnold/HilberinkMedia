@@ -62,4 +62,3 @@ class Consist:
             self.cars = c
             return self.cars
 
-
