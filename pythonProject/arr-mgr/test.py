@@ -3,6 +3,7 @@ from dataclasses_serialization.json import JSONSerializer
 
 from rollingstock import Engine, Car
 from locations import Industry, Track
+from consist import Consist
 
 test_engine = Engine(
     railroad_company='Canadian National',
@@ -62,15 +63,37 @@ test_industry = Industry(
     max_hold_input_3=None,
     output_1='timber',
     in_stock_output_1=0,
+    max_hold_output_1=100,
+    output_2='beams',
+    in_stock_output_2=0,
+    max_hold_output_2=100,
 
 )
 
-print(test_engine)
-test_engine.is_assigned_to_crew = True
-print(test_engine)
-print(test_car_loaded)
-print(test_car_not_loaded)
-print(test_industry)
+test_track = Track(
+    name_location='lumbermill',
+    description='this track unloads logs into the pond',
+    track_plan= 'not implemented yet but will be a str of the url to the image',
+    type_of_track='unload',
+    track_prefix='lm-ul',
+    track_number=1,
+    max_cars=6,
+    is_occupied=False,
+    number_of_rollingstock=0,
+
+)
+test_consist: Consist = Consist(
+    name='cn001',
+    start='Lumbercamp',
+    end='Sawmill',
+    engine=['cn42', 'cn41'],
+    cars=['arr001', 'arr002', 'arr003, arr004'],
+)
+
+
+
+
+
 
 
 # serial = JSONSerializer.serialize(test_engine)
@@ -80,7 +103,7 @@ print(test_industry)
 #   file.write(str(serial))
 print('hello does this object still exist? ', test_car_not_loaded)
 
-def test_load_car(name: str, quantity: int):
+def test_load_car(name: str, quantity: int) -> object:
     test_car_not_loaded.cargo_name = name
     test_car_not_loaded.cargo_quantity = quantity
     test_car_not_loaded.is_loaded = True
@@ -92,7 +115,7 @@ print('load car', test_car_not_loaded)
 
 print(test_car_not_loaded)
 
-def test_unload_car(name: str, quantity: int):
+def test_unload_car(name: str, quantity: int) -> object:
     test_car_not_loaded.cargo_name = name
     test_car_not_loaded.cargo_quantity = quantity
     test_car_not_loaded.is_loaded = False
@@ -103,3 +126,20 @@ test_car_not_loaded = test_unload_car('Empty', 0)
 print('unloaded car:\n',test_car_not_loaded)
 
 
+def test() -> None :
+    print(test_engine)
+    print(test_car_loaded)
+    print(test_car_not_loaded)
+    print(test_industry)
+    print(test_track)
+    print(test_consist)
+    test_consist.add_engine('arr001')
+    print('added engine', test_consist)
+    test_consist.remove_engine('arr001')
+    #test_consist.remove_engine('arr001')
+    print('remove engine', test_consist)
+    test_consist.add_car('cn101')
+    print('car added', test_consist)
+    test_consist.remove_car('cn101')
+    print('car removed', test_consist)
+test()
